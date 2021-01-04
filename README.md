@@ -19,10 +19,13 @@ With textual data at the letter/word/sentence level, our data is actually sequen
 
 * **The structure and limitations of Recurrent Neural Networks (RNN)** 
 
-Now that we have understood why we need to use a RNN, we will dwell on what is actually a RNN and how it makes it possible to take into account the time dependency.
+Now that we have understood why we need to use a RNN, we will dwell on what is actually a RNN and how it makes it possible to take into account the time dependency. In the following image, One can see the overall structure of an RNN on the left, and the unfolded version on the right.
 
 ![STRUCTURERNN](7B634F80-0CBA-4A8D-BA28-C63A961CE283.webp)
+source: ...
 
+
+EXPLIQUER LE GRAPHIQUE
 
 BUT : « the curse of short-term memory » : decay of information overtime 
 https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
