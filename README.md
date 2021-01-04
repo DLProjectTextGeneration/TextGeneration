@@ -7,9 +7,23 @@ Intro
 
 Reading the literature and internet resources on Medium and Towardsdatascience, we quickly understood that the most common and efficient way to do text generation was to build a LSTM Recurrent Neural Network. What are LSTM RNN and why are they so useful in the case of text generation ?
 
-* Recurrent Neural Networks
-Designed to handle sequential data (as opposed to fixed-point data for Convutionnal Neural Networks).
-...
+* Recurrent Neural Networks (RNN) and sequential data
+
+Why should we use a RNN rather than a regular convolutionnal feed-forward neural network? This comes from the fact we are dealing with sequential data rather than fixed-point data. Let's first take an example to understand. 
+
+Let's say that we are aiming at predicting weather condition for the next day. The weather condition depends on multiple variables such as humidy percentage, wind intensity, brightness percentage... This would fit the modelling a convolutionnal feed-forward neural network. However, it is likely that weather conditions for the next day depends on weather conditions in the last few days and that this depency on time is one of the most important feature of the modeling. Here using a CNN would mean making an indepency assumption on all test observation at the day level while using an RNN enables represent the time dependency. 
+
+With textual data at the letter/word/sentence level, our data is actually sequential. With text generation, our goal is to predict n number of characters  after an inputed string of text. For example:
+
+METTRE UNE IMAGE ICI POUR COMPRENDRE
+
+* The structure of Recurrent Neural Networks (RNN) 
+
+Now that we have understood why we need to use a RNN, we will dwell on what is actually a RNN and how it makes it possible to take into account the time dependency.
+
+METTRE UN GRAPH SUR LA STRUCTURE DES RNN
+
+
 BUT : « the curse of short-term memory » : decay of information overtime 
 https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
 * One solution: LSTM RNN
