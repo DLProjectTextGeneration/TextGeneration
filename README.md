@@ -15,7 +15,7 @@ Let's say that we are aiming at predicting weather condition for the next day. T
 
 With textual data at the letter/word/sentence level, our data is actually sequential. With text generation, our goal is to predict n number of characters  after an inputed string of text. For example:
 
-METTRE UNE IMAGE ICI POUR COMPRENDRE
+![EXEMPLE1](ExempleRNN1.png)
 
 * The structure of Recurrent Neural Networks (RNN) 
 
