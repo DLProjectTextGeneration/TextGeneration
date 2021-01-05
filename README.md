@@ -73,7 +73,7 @@ During this step, we map each unique character of the text to a number. If we we
 We then extract all the possible sequences of 100 characters from our text and we store them into a vector X. For each sequence, the follow up character (the target) is stored into another vector Y. So X is our train set and Y our target set. From a sequence of 100 characters, our model will try to predict the next one. We shift our sequence of one character form our initial text and predict the follow up character. We proceed in this way for all the possible sequences stored in X. We also format the X and Y vectors in the right shape for the LSTM model.
 
 
-### fitting the model
+### Fitting the model
 
 **Creation of the model**
 
@@ -145,9 +145,9 @@ After predicting on our train data, we need to try generating text with the Brit
 
 There is definitely a drop in term of text quality in the first line as the text is not quite understandable. Diversity is quite good, though there is a few repetition with the verb "know". Overall, we were quite happy with the results, though there is room for improvement. It is possible the model is overfitting, as it is returning entire sequences of text ("my loneliness is killing me", Baby One More Time, Britney Spears), rather then creating original sentences. 
 
-**extensions**
+**Extensions**
 
-To get better text quality and diversity, we could widen the model by inputting more hidden layer and using a bigger dataset. However, our models are already quite slow, so we decided on this trade-off between text quality and speed. With more power and more time, one could surely improve the model.
+To get better text quality and diversity, we could widen the model by inputing more hidden layer and using a bigger dataset. However, our models are already quite slow, so we decided on this trade-off between text quality and speed. With more power and more time, one could surely improve the model.
 One other thing that could be interesting to do is to implement the metrics mentionned in the theory parts of this report. This could help us understand where our model fails and how we could improve it. 
 
 
