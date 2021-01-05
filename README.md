@@ -98,7 +98,9 @@ Training of the model
 
 We have a part that create checkpoints everytime the model is improving. Thus, we are able to save a model, to go back in time if the loss increases from one epoch to the next one or add epochs without starting over each time. We tested different values for the batch size. The optimal size, ie that gave good results and was not too time consuming, is 128. We trained our model and saved the checkpoint with the lowest loss.
 
+### A second model
 
+To improve our model, an additional step at the beggining of the process could help. A cleaning part that will reduce the number of different characters from 76 to 50 by removing the punctuation and the break line. For the prediction, the model will have less possible choices, so it is more likely to have a good prediction. The main drawback for this model is that we will never have a break line thus it will be less structured like song lyric.
 
 ### Generating texts: outputs and insights
 
