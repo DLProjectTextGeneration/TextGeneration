@@ -76,7 +76,7 @@ During this step, we map each unique character of the text to a number. If we we
 
 ![ComparaisonBritney](Comparaison_britney.png)
 
-![Beyonce](Beyonce2)
+![Beyonce2](Beyonce2.png)
 
 ## Conclusion and extensions
 
