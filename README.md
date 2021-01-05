@@ -66,7 +66,7 @@ Hence we decided on using the song lyrics datasets that would enable us to more 
 
 Data preparation
 
-Creation of character mapping
+Creation of character mapping.
 During this step, we map each unique character of the text to a number. If we were to proceed by word level, each word would be embedded to a number meaning the size of our input would be much more important. In our case we worked at the character level. Hence, we only have 76 unique characters associated to an integer from 0 to 75. The different characters found in the song lyrics are lowercase letters (a-z), uppercase letters (A-Z), punctuation (' ', ',', '!', ...) and line break ('\n'). Our text is now a sequence of integers.
 
 Model structure
@@ -97,6 +97,8 @@ The final layer outputs a character, our prediction for each sequence of 100 cha
 Training of the model
 
 We have a part that create checkpoints everytime the model is improving. Thus, we are able to save a model, to go back in time if the loss increases from one epoch to the next one or add epochs without starting over each time. We tested different values for the batch size. The optimal size, ie that gave good results and was not too time consuming, is 128. We trained our model and saved the checkpoint with the lowest loss.
+
+
 
 ### Generating texts: outputs and insights
 
