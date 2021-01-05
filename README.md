@@ -128,7 +128,7 @@ We fixed a starting point to compare the models. Our seed is :
 We saying oh wee oh wee oh wee oh
 We saying oh wee oh wee oh wee "
 
-Generating the next 400, here is our result :
+We generate the next 400 characters, here is our result :
 
 ![ComparaisonBritney](Comparaison_britney.png)
 
