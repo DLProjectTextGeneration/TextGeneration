@@ -104,11 +104,29 @@ To improve our model, an additional step at the beggining of the process could h
 
 ### Generating texts: outputs and insights
 
+We generate the 400 next characters by shifting the sequence by one character adding the predicted character at the end of the sequence each time :
+
+**First sequence from the initial text**
+
+them candles hanging
+Hanging from the ceiling low
+We use our bodies to make our own videos
+Put on ou
+
+**Second sequence with the first predicted character**
+
+hem candles hanging
+Hanging from the ceiling low
+We use our bodies to make our own videos
+Put on ou**r**
+
+and so on ...
+
+
+
 ![ComparaisonBritney](Comparaison_britney.png)
 
 ![Beyonce2](beyonce2.png)
-
-petite partie sur clean data
 
 ## Conclusion and extensions
 
