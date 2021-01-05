@@ -76,7 +76,9 @@ We then extract all the possible sequences of 100 characters from our text and w
 
 ### fitting the model
 
-We tried several models with different number of layers, different number of neurons by layer but the best model that we were able to train and test in the amount of time that we had is the folowing : 
+Creation of the model
+
+We tried several models with different number of layers, different number of neurons by layer but the best model that we were able to train and test in the amount of time that we had is the following : 
 
 ```
 model = Sequential()
@@ -88,14 +90,21 @@ model.add(Dense(Y_modified.shape[1], activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 ```
+This model is quite big but smaller models gave us bad results. We could add layers or neurons in the different layers but it increases the computanial time. This model was a good trade-off between efficiency and rapidity.
+The dropout layers are here to take care of the overfitting.
+The final layer outputs a character, our prediction for each sequence of 100 characters.
 
+Training of the model
 
+We have a part that create checkpoints everytime the model is improving. Thus, we are able to save a model, to go back in time if the loss increases from one epoch to the next one or add epochs without starting over each time. We tested different values for the batch size. The optimal size, ie that gave good results and was not too time consuming, is 128. We trained our model and saved the checkpoint with the lowest loss.
 
 ### Generating texts: outputs and insights
 
 ![ComparaisonBritney](Comparaison_britney.png)
 
 ![Beyonce2](beyonce2.png)
+
+petite partie sur clean data
 
 ## Conclusion and extensions
 
