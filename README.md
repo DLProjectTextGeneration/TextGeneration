@@ -104,7 +104,7 @@ To improve our model, an additional step at the beggining of the process could h
 
 ### Generating texts: outputs and insights
 
-We generate the 400 next characters by shifting the sequence by one character adding the predicted character at the end of the sequence each time :
+We generate the next characters by shifting the sequence by one character adding the predicted character at the end of the sequence each time :
 
 **First sequence from the initial text**
 
@@ -122,9 +122,17 @@ Put on ou**r**
 
 and so on ...
 
+We fixed a starting point to compare the models. Our seed is : 
 
+" And scream and shout and let it out
+We saying oh wee oh wee oh wee oh
+We saying oh wee oh wee oh wee "
+
+Generating the next 400, here is our result :
 
 ![ComparaisonBritney](Comparaison_britney.png)
+
+As expected we loose the structure of our initial text in our second model. 
 
 ![Beyonce2](beyonce2.png)
 
