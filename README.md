@@ -33,9 +33,9 @@ This limit comes from the vanishing gradient. At each iteration of training, the
 LSTM networks have quite complicated architecture, so we will only go over the intuition. One can check article X for more details.
 The following image is taken from the course and represents the structure of a LSTM RNN. The difference with a regular RNN is that cells of LSTM RNN are more complex: they have three kind of "gates.
 
-IMAGE.
+![LSTM](Capture d’écran 2021-01-05 à 21.16.04.png)
 
-Such a structure will enable a choice between important and less important output and avoid the vanishing grandient issue.
+Such a structure will enable a choice between important and less important inputs and avoid the vanishing grandient issue.
 
 
 ### Our modeling choice
