@@ -1,6 +1,5 @@
 # Text Generation Report
 
-Intro
 
 ## Generating text with Neural Networks: Theory
 ### The models
@@ -25,14 +24,17 @@ Now that we have understood why we need to use a RNN, we will dwell on what is a
 
 While the CNN is "feed-forward", the RNN instaures loops within the networks which allows the information to persist. This will allow the context to persist within the network. For more detailed  insights on how RNN works, see article X, X and X from the bibliography.
 
-BUT : « the curse of short-term memory » : decay of information overtime 
-https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
-* One solution: LSTM RNN
+However, RNN have one main limitation: there is a limit at how they can handle sequences. While RNN are good for remembering short sequences,they tend to "forget" the overall context of the sentence. For example, it will work quite well on small sentences like "I want to eat ..." but will have trouble to predict for a long sentence. For text generation, we also need a model that is able to remember information from the past, ie. several sentences ago, which RNN cannot do. 
 
+This limit comes from the vanishing gradient. 
 
-* **Text generation and LSTM RNN**
+"In order to understand this, you’ll need to have some knowledge about how a feed-forward neural network learns. We know that for a conventional feed-forward neural network, the weight updating that is applied on a particular layer is a multiple of the learning rate, the error term from the previous layer and the input to that layer. Thus, the error term for a particular layer is somewhere a product of all previous layers’ errors. When dealing with activation functions like the sigmoid function, the small values of its derivatives (occurring in the error function) gets multiplied multiple times as we move towards the starting layers. As a result of this, the gradient almost vanishes as we move towards the starting layers, and it becomes difficult to train these layers.
 
+A similar case is observed in Recurrent Neural Networks. RNN remembers things for just small durations of time, i.e. if we need the information after a small time it may be reproducible, but once a lot of words are fed in, this information gets lost somewhere. This issue can be resolved by applying a slightly tweaked version of RNNs – the Long Short-Term Memory Networks."
 
+* **One solution: LSTM RNN**
+
+LSTM networks have quite complicated architecture, so we will only go over the intuition. One can check article X for more details.
 
 
 ### Our modeling choice
@@ -76,3 +78,6 @@ During this step, we map each unique character of the text to a number. If we we
 
 
 ### Bibliography
+RNN structure:
+https://medium.com/mindorks/understanding-the-recurrent-neural-network-44d593f112a2
+long term short term memory: https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
