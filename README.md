@@ -69,11 +69,15 @@ Data preparation
 Creation of character mapping
 During this step, we map each unique character of the text to a number. If we were to proceed by word level, each word would be embedded to a number meaning the size of our input would be much more important. In our case we worked at the character level. Hence, we only have 76 unique characters associated to an integer from 0 to 75. The different characters found in the song lyrics are lowercase letters (a-z), uppercase letters (A-Z), punctuation (' ', ',', '!', ...) and line break ('\n'). Our text is now a sequence of integers.
 
-We then extract all the possible sequences of 100 characters from our text and we store them into a vector X. For each sequence, the follow up character (the target) is stored into another vector Y.
+Model structure
 
+We then extract all the possible sequences of 100 characters from our text and we store them into a vector X. For each sequence, the follow up character (the target) is stored into another vector Y. So X is our train set and Y our target set. From a sequence of 100 characters, our model will try to predict the next one. We shift our sequence of one character form our initial text and predict the follow up character. We proceed in this way for all the possible sequences stored in X. We also format the X and Y vectors in the right shape for the LSTM model.
 
 
 ### fitting the model
+
+We tried several models  
+
 ### Generating texts: outputs and insights
 
 ![ComparaisonBritney](Comparaison_britney.png)
