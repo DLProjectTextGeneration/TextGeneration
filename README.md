@@ -73,6 +73,8 @@ During this step, we map each unique character of the text to a number. If we we
 ### fitting the model
 ### Generating texts: outputs and insights
 
+![ComparaisonBritney](Comparaison_britney.png)
+
 ## Conclusion and extensions
 
 
