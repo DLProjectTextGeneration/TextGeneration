@@ -58,10 +58,11 @@ https://towardsdatascience.com/how-to-evaluate-text-generation-models-metrics-fo
 ## Generating text with Neural Networks: Practice
 ### Our data and data preparation 
 To test and train our model, we have to use textual data. We tried on different datasets to test and understand how RNN work:
-Different books from the Gutenberg project, an open source website that proposes royalty-free books.
-One large dataset composed of fake news articles. The goal was to produce a fake news generator. Unfortunately the dataset was huge and the sentence structure/vocabulary was more complicated/less clean than using directly text from a book. Even after cleaning, running the model through this dataset was too time consuming. 
+Different books from the Gutenberg project, an open source website that proposes royalty-free books. 
+Different song lyrics classified by artists, one text file by artist.
+One large dataset composed of fake news articles. The goal was to produce a fake news generator. Unfortunately the dataset was huge and the sentence structure/vocabulary was more complicated/less clean than using directly text from a book or song lyrics from an artist. Even after cleaning, running the model through this dataset was too time consuming.
 
-Hence we decided on using the book datasets that would enable us to more clearly understand and build our model. 
+Hence we decided on using the song lyrics datasets that would enable us to more clearly understand and build our model. From all the text files that we had we chose Britney spears' song lyrics. We chose her because the size of the text file was one of the biggest, hence we have enough material to train our model.
 
 Data preparation
 
