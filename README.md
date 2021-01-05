@@ -76,7 +76,20 @@ We then extract all the possible sequences of 100 characters from our text and w
 
 ### fitting the model
 
-We tried several models  
+We tried several models with different number of layers, different number of neurons by layer but the best model that we were able to train and test in the amount of time that we had is the folowing : 
+
+```
+model = Sequential()
+model.add(LSTM(400, input_shape=(X_modified.shape[1], X_modified.shape[2]), return_sequences=True))
+model.add(Dropout(0.2))
+model.add(LSTM(400))
+model.add(Dropout(0.2))
+model.add(Dense(Y_modified.shape[1], activation='softmax'))
+
+model.compile(loss='categorical_crossentropy', optimizer='adam')
+```
+
+
 
 ### Generating texts: outputs and insights
 
