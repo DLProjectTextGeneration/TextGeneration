@@ -153,8 +153,12 @@ One other thing that could be interesting to do is to implement the metrics ment
 
 ### Bibliography
 (1) https://medium.com/mindorks/understanding-the-recurrent-neural-network-44d593f112a2
+
 (2) https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
+
 (3) https://medium.com/datadriveninvestor/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577
+
 (4) https://www.sciencedirect.com/science/article/pii/S1319157820303360
+
 (5) https://www.sciencedirect.com/science/article/pii/S1319157820303360
 
