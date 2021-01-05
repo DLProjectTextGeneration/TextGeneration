@@ -4,7 +4,7 @@
 ## Generating text with Neural Networks: Theory
 ### The models
 
-Reading the literature and internet resources on Medium and Towardsdatascience, we quickly understood that the most common and efficient way to do text generation was to build a LSTM Recurrent Neural Network. What are LSTM RNN and why are they so useful in the case of text generation ? We will first explain what should we use RNN in the case of sequential data, then we will detail the structure and limitations on RNN. Then, we will present LSTM RNN and our current modelling choices.
+Reading the literature and internet resources on Medium and Towardsdatascience, we quickly understood that the most common and efficient way to do text generation was to build a LSTM Recurrent Neural Network. What are LSTM RNN and why are they so useful in the case of text generation ? We will first explain why should we use RNN in the case of sequential data, then we will detail the structure and limitations on RNN. Then, we will present LSTM RNN and our current modelling choices.
 
 * **Recurrent Neural Networks (RNN) and sequential data**
 
