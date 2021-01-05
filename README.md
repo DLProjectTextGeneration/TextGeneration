@@ -1,18 +1,18 @@
 # Text Generation Report
-
+**Léa Vaysette - Alice Tourret**
 
 ## Generating text with Neural Networks: Theory
 ### The models
 
-Reading the literature and internet resources on Medium and Towardsdatascience, we quickly understood that the most common and efficient way to do text generation was to build a LSTM Recurrent Neural Network. What are LSTM RNN and why are they so useful in the case of text generation ? We will first explain why should we use RNN in the case of sequential data, then we will detail the structure and limitations on RNN. Then, we will present LSTM RNN and our current modelling choices.
+Reading the literature and internet resources on Medium and Towardsdatascience, we quickly understood that the most common and efficient way to do text generation was to build a long short-term memory Recurrent Neural Network (LSTM RNN). What are LSTM RNN and why are they so useful in the case of text generation ? We will first explain why we should use RNN in the case of sequential data, then we will detail the structure and limitations on RNN. Then, we will present LSTM RNN and our current modelling choices.
 
 * **Recurrent Neural Networks (RNN) and sequential data**
 
 Why should we use a RNN rather than a regular convolutionnal feed-forward neural network? This comes from the fact we are dealing with sequential data rather than fixed-point data. Let's first take an example to understand. 
 
-Let's say that we are aiming at predicting weather for the next day. The weather for the next day depends on multiple variables at the current day such as humidy percentage, wind intensity, brightness percentage... This would fit the modelling a convolutionnal feed-forward neural network. However, it is likely that weather conditions for the next day depend on weather conditions in the last few days and that this depency on time is one of the most important features of the model. Here using a CNN would mean making an independency assumption on all test observations at the day level while using an RNN enables to represent the time dependency. 
+Let's say that we are aiming at predicting weather for the next day. The weather for the next day depends on multiple variables at the current day such as humidy percentage, wind intensity, brightness percentage... This would fit a convolutionnal feed-forward neural network (CNN). However, it is likely that weather conditions for the next day depend on weather conditions in the last few days and that this depency on time is one of the most important features of the model. Here using a CNN would mean making an independency assumption on all test observations at the day level while using an RNN enables to represent the time dependency. 
 
-With textual data at the letter/word/sentence level, our data is actually sequential. With text generation, our goal is to predict n number of characters  after an inputed string of text. For example, with n=1:
+With textual data at the letter/word/sentence level, our data is actually sequential. With text generation, our goal is to predict n letter/word/sentence after an inputed string of text. For example, with n=1 at the word level:
 
 ![EXEMPLE1](ExempleRNN1.png)
 
@@ -22,19 +22,20 @@ Now that we have understood why we need to use a RNN, we will dwell on what is a
 
 ![RNNetCNN](07316C3F-6D53-40FD-9D44-23E32F540DA1.jpeg)
 
-While the CNN is "feed-forward", the RNN instaures loops within the networks which allows the information to persist. This will allow the context to persist within the network. For more detailed  insights on how RNN works, see article X, X and X from the bibliography.
+While the CNN is "feed-forward", the RNN instaures loops within the networks which allows the information to persist. This will allow the context to persist within the network. For more detailed  insights on how RNN works, see article X, X from the bibliography.
 
-However, RNN have one main limitation: there is a limit at how they can handle sequences. While RNN are good for remembering short sequences,they tend to "forget" the overall context of the sentence. For example, it will work quite well on small sentences like "I want to eat ..." but will have trouble to predict for a long sentence. For text generation, we also need a model that is able to remember information from the past, ie. several sentences ago, which RNN cannot do. 
+However, RNN have one main limitation: there is a limit at how they can handle sequences. While RNN are good for remembering short sequences,they tend to "forget" the overall context of the sentence. For example, it will work quite well on short sentences such as "I want to eat ..." but will have trouble to predict for a long sentence. For text generation, we also need a model that is able to remember information from the past, ie. several sentences ago, which RNN cannot do. 
 
-This limit comes from the vanishing gradient. 
-
-"In order to understand this, you’ll need to have some knowledge about how a feed-forward neural network learns. We know that for a conventional feed-forward neural network, the weight updating that is applied on a particular layer is a multiple of the learning rate, the error term from the previous layer and the input to that layer. Thus, the error term for a particular layer is somewhere a product of all previous layers’ errors. When dealing with activation functions like the sigmoid function, the small values of its derivatives (occurring in the error function) gets multiplied multiple times as we move towards the starting layers. As a result of this, the gradient almost vanishes as we move towards the starting layers, and it becomes difficult to train these layers.
-
-A similar case is observed in Recurrent Neural Networks. RNN remembers things for just small durations of time, i.e. if we need the information after a small time it may be reproducible, but once a lot of words are fed in, this information gets lost somewhere. This issue can be resolved by applying a slightly tweaked version of RNNs – the Long Short-Term Memory Networks."
+This limit comes from the vanishing gradient. At each iteration of training, the gradient used to optimize the network will become increasingly small. In some cases, this issue prevents RNN to hangle long texts and sequences (see article X for more). 
 
 * **One solution: LSTM RNN**
 
 LSTM networks have quite complicated architecture, so we will only go over the intuition. One can check article X for more details.
+The following image is taken from the course and represents the structure of a LSTM RNN. The difference with a regular RNN is that cells of LSTM RNN are more complex: they have three kind of "gates.
+
+IMAGE.
+
+Such a structure will enable a choice between important and less important output and avoid the vanishing grandient issue.
 
 
 ### Our modeling choice
@@ -144,3 +145,4 @@ As expected we loose the structure of our initial text in our second model.
 RNN structure:
 https://medium.com/mindorks/understanding-the-recurrent-neural-network-44d593f112a2
 long term short term memory: https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
+Vanishing gradient: https://medium.com/datadriveninvestor/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577
